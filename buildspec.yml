@@ -1,0 +1,28 @@
+version: 0.2
+
+run-as: root
+
+env:
+  parameter-store:
+    DOCKER_USERNAME: DOCKER_USERNAME
+    DOCKER_PASSWORD: DOCKER_PASSWORD
+        
+phases:
+  install:
+    commands:
+      - yum install -y docker
+      - pip install -r requirements.txt
+    
+  pre_build:
+    commands:
+      - echo "Pre Build Stage is Started"
+      - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    
+  build:
+    commands:
+      - docker build -t awsdevopsguy/sample-flask-app:v2 .
+    
+  post_build:
+    commands:
+      - echo "Post build step has been started"
+      - docker push awsdevopsguy/sample-flask-app:v2
