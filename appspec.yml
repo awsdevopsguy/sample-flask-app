@@ -6,7 +6,7 @@ files:
     destination: /home/ec2-user/
 
 hooks:
-  ApplicationStart:
+  AfterInstall:
     - location: scripts/start_container.sh
       timeout: 300
       runas: root
