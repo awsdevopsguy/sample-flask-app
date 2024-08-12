@@ -8,9 +8,15 @@ container_id=$(docker ps -q --filter "name=$CONTAINER_NAME")
 
 # Check if a container ID was found
 if [ -n "$container_id" ]; then
+<<<<<<< HEAD
     echo "Stopping and removing container..."
     docker stop "$container_id"
     docker rm "$container_id"
+=======
+# Stop the Docker container
+   docker stop "$container_id"
+   docker rm "$container_id"
+>>>>>>> e8625449faabf3daa80587e7582b886ea58c769f
 else
     echo "No running container with name $CONTAINER_NAME found."
 fi
