@@ -7,6 +7,7 @@ container_id=$(docker ps -q)
 if [ -n "$container_id" ]; then
 # Stop the Docker container
    docker stop "$container_id"
+   docker rm "$container_id"
 else
    echo "No running containers found."
 fi
