@@ -6,7 +6,6 @@ files:
     destination: /home/ec2-user/
 
 hooks:
-
   ApplicationStart:
     - location: scripts/start_container.sh
       timeout: 300
