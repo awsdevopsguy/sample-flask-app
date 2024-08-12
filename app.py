@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/')
 # ‘/’ URL is bound with hello_world() function.
 def hello_world():
-    return 'Hello World deployed using AWS Code-Deploy Service with CI-CD Integration//..//'
+    return 'Hello World deployed using AWS Code-Deploy Service with CI-CD Integration updated'
 
 # main driver function
 if __name__ == '__main__':
