@@ -16,5 +16,5 @@ fi
 
 # Run a new container with the latest image
 echo "Starting new container with the latest image..."
-docker run -d --name $CONTAINER_NAME -p 5000:5000 $IMAGE_NAME
+docker run -d --name $CONTAINER_NAME --restart unless-stopped -p 5000:5000 $IMAGE_NAME
 
